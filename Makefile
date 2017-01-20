@@ -18,14 +18,18 @@ clean:
 	rm -f $(patsubst %.md,%.html,$(wildcard *.md))
 	rm -f *.html *.bak *~
 
-publish: $(HTML) $(CSS) dumboRat-NewbieFAQ/
-	rsync -r --delete-excluded $(foreach file,$^,--include="/$(file)")\
+publish: \
+ dumboRat-NewbieFAQ\
+ index.html\
+ resume.css\
+ resume.html
+	rsync -r -l --delete-excluded $(foreach file,$^,--include="/$(file)")\
 	 --exclude '/*' ./ mechbits.com:/var/www/mechbits
 
 #===============================================================================
 # recipes:
 
-#index.html: MDFLAGS += --from markdown_github
+README.html: MDFLAGS += --from markdown_github
 
 #resume.html: resume.md resume.tmpl
 #	pandoc -s --section-div --template=resume.tmpl -o $@ --css resume.css $<
@@ -34,10 +38,13 @@ publish: $(HTML) $(CSS) dumboRat-NewbieFAQ/
 # generic recipes:
 
 %.html: %.md %.tmpl | %.css
-	pandoc $(MDFLAGS) -s -o $@ $< --template=$*.tmpl --css $*
+	pandoc $(MDFLAGS) -s -o $@ $< --template=$*.tmpl --css $*.css
 
 %.html: %.md %.tmpl | style.css
 	pandoc $(MDFLAGS) -s -o $@ $< --template=$*.tmpl --css style.css
+
+%.html: %.md | %.css
+	pandoc $(MDFLAGS) -s -o $@ $< --css $*.css
 
 %.html: %.md | style.css
 	pandoc $(MDFLAGS) -s -o $@ $< --css style.css
