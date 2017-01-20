@@ -1,7 +1,7 @@
 MDFLAGS =\
  --section-div
 
-# -t markdown_github
+# --from markdown_github
 
 MD   = $(wildcard *.md)
 CSS  = $(wildcard *.css)
@@ -24,6 +24,8 @@ publish: $(HTML) $(CSS) dumboRat-NewbieFAQ/
 
 #===============================================================================
 # recipes:
+
+#index.html: MDFLAGS += --from markdown_github
 
 #resume.html: resume.md resume.tmpl
 #	pandoc -s --section-div --template=resume.tmpl -o $@ --css resume.css $<
