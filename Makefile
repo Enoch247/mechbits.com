@@ -18,9 +18,9 @@ clean:
 	rm -f $(patsubst %.md,%.html,$(wildcard *.md))
 	rm -f *.html *.bak *~
 
-publish: $(HTML) $(CSS)
-	rsync -r --delete-excluded $(foreach file,$^,--include="$(file)")\
-	 --exclude '*' ./ mechbits.com:/var/www/mechbits/new
+publish: $(HTML) $(CSS) dumboRat-NewbieFAQ/
+	rsync -r --delete-excluded $(foreach file,$^,--include="/$(file)")\
+	 --exclude '/*' ./ mechbits.com:/var/www/mechbits/new
 
 #===============================================================================
 # recipes:
