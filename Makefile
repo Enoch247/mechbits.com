@@ -20,7 +20,7 @@ clean:
 
 publish: $(HTML) $(CSS) dumboRat-NewbieFAQ/
 	rsync -r --delete-excluded $(foreach file,$^,--include="/$(file)")\
-	 --exclude '/*' ./ mechbits.com:/var/www/mechbits/new
+	 --exclude '/*' ./ mechbits.com:/var/www/mechbits
 
 #===============================================================================
 # recipes:
