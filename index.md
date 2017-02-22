@@ -2,8 +2,14 @@
  title: Mechbits.com
 ---
 
+![Joshua DeWeese](me.jpg "me")\ 
+
 # Mechbits
-This is the Mechbits homepage. Currently there is not alot of content. 
+The personal website of Joshua DeWeese
+
+## About Me
+
+I am a computer engineer by profession. My favorite projects are the ones that require me to wear both my software and hardware hats. I also very much enjoy photography and lately have been exploring flash photography. Some of my hobby projects (including the tools to build this site) can be found [here](https://github.com/Enoch247). However, the thing I enjoy doing the most is spending time with my wife and kids.
 
 ## Links: 
 - [Projects](https://github.com/Enoch247)

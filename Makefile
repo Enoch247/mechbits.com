@@ -21,15 +21,22 @@ clean:
 publish: \
  dumboRat-NewbieFAQ\
  index.html\
+ index.css\
  resume.css\
- resume.html
+ resume.html\
+ *.jpg
 	rsync -r -l --delete-excluded $(foreach file,$^,--include="/$(file)")\
 	 --exclude '/*' ./ mechbits.com:/var/www/mechbits
 
 #===============================================================================
 # recipes:
 
+index.html: | me.jpg
+
 README.html: MDFLAGS += --from markdown_github
+
+me.jpg: questionmark2.jpg
+	convert $< -resize 250x250 $@
 
 #resume.html: resume.md resume.tmpl
 #	pandoc -s --section-div --template=resume.tmpl -o $@ --css resume.css $<
