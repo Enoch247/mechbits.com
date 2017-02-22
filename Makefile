@@ -62,7 +62,4 @@ me.jpg: questionmark2.jpg
 %.html: %.md
 	pandoc $(MDFLAGS) -s -o $@ $<
 
-%.pdf: %.md
-	pandoc -s -o $@ $<
-
 # vim: set noexpandtab :
