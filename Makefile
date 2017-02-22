@@ -1,8 +1,6 @@
 MDFLAGS =\
  --section-div
 
-# --from markdown_github
-
 MD   = $(wildcard *.md)
 CSS  = $(wildcard *.css)
 HTML = $(patsubst %.md,%.html,$(MD))
@@ -12,11 +10,10 @@ HTML = $(patsubst %.md,%.html,$(MD))
 
 .PHONY: all clean publish
 
-all: $(HTML) Makefile
+all: $(HTML) me.jpg
 
 clean:
-	rm -f $(patsubst %.md,%.html,$(wildcard *.md))
-	rm -f *.html *.bak *~
+	rm -f $(HTML) me.jpg
 
 publish: \
  dumboRat-NewbieFAQ\
@@ -24,42 +21,27 @@ publish: \
  index.css\
  resume.css\
  resume.html\
- *.jpg
+ me.jpg
 	rsync -r -l --delete-excluded $(foreach file,$^,--include="/$(file)")\
 	 --exclude '/*' ./ mechbits.com:/var/www/mechbits
 
 #===============================================================================
 # recipes:
 
-index.html: | me.jpg
-
-README.html: MDFLAGS += --from markdown_github
+README.html: MDFLAGS += --from markdown_github --css github-pandoc.css
 
 me.jpg: questionmark2.jpg
 	convert $< -resize 250x250 $@
 
-#resume.html: resume.md resume.tmpl
-#	pandoc -s --section-div --template=resume.tmpl -o $@ --css resume.css $<
-
 #-------------------------------------------------------------------------------
 # generic recipes:
 
-%.html: %.md %.tmpl | %.css
-	pandoc $(MDFLAGS) -s -o $@ $< --template=$*.tmpl --css $*.css
+%.html: template.html %.md | %.css
+	pandoc $(MDFLAGS) -s -o $@ $(filter %.md,$^)\
+	 --template=template.html --css $*.css
 
-%.html: %.md %.tmpl | style.css
-	pandoc $(MDFLAGS) -s -o $@ $< --template=$*.tmpl --css style.css
-
-%.html: %.md | %.css
-	pandoc $(MDFLAGS) -s -o $@ $< --css $*.css
-
-%.html: %.md | style.css
-	pandoc $(MDFLAGS) -s -o $@ $< --css style.css
-
-%.html: %.md %.tmpl
-	pandoc $(MDFLAGS) -s -o $@ $< --template=$*.tmpl
-
-%.html: %.md
-	pandoc $(MDFLAGS) -s -o $@ $<
+%.html: template.html %.md
+	pandoc $(MDFLAGS) -s -o $@ $(filter %.md,$^)\
+	 --template=template.html
 
 # vim: set noexpandtab :
