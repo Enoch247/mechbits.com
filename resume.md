@@ -58,7 +58,7 @@ Software Engineer, May 2009 – September 2011
 Research Assistant, September 2005 – May 2009
 
 - Executed experiments and procedures to support Dr. Madhavi Kadakia's research
-Performed maintenance and training for DNA sequencer, high end microscope, and other lab equipment
+- Performed maintenance and training for DNA sequencer, high end microscope, and other lab equipment
 - Kept lab stocked and tracked all related expenditures
 
 ## Education
