@@ -17,6 +17,8 @@ I am a computer engineer by profession. My favorite projects are the ones that r
 - [Intranet](http://intranet.mechbits.com/)
 
 ## Words to live by
+These are phrases and quotes that I have gathered that resonate with me. Every time I re-read them they only ring more true.
+
 - "All that is necessary for evil to triumph is for good men to do nothing." - Edmund Burke
 
 
