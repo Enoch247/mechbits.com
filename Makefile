@@ -28,6 +28,8 @@ publish: \
 #===============================================================================
 # recipes:
 
+index.html resume.html: MDFLAGS += --css $*.css
+
 README.html: MDFLAGS += --from markdown_github --css github-pandoc.css
 
 me.jpg: questionmark2.jpg
@@ -36,12 +38,8 @@ me.jpg: questionmark2.jpg
 #-------------------------------------------------------------------------------
 # generic recipes:
 
-%.html: template.html %.md | %.css
-	pandoc $(MDFLAGS) -s -o $@ $(filter %.md,$^)\
-	 --template=template.html --css $*.css
-
+# make foo.html from template.html, foo.md, and any other markdown files
 %.html: template.html %.md
-	pandoc $(MDFLAGS) -s -o $@ $(filter %.md,$^)\
-	 --template=template.html
+	pandoc $(MDFLAGS) --template=template.html -s -o $@ $(filter %.md,$^)
 
 # vim: set noexpandtab :
