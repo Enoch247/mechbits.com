@@ -32,8 +32,30 @@ I am a computer engineer by profession. My favorite projects are the ones that r
 - [GitHub](https://github.com/Enoch247)
 
 ## The Best of the Web
-- [Linux Source Code](http://lxr.free-electrons.com/)
 - [The Eudyptula Challenge](http://eudyptula-challenge.org/)
-- [Linker Scripts](https://sourceware.org/binutils/docs/ld/Scripts.html)
+- [Dynamic Class Loading for C++ on Linux](http://www.linuxjournal.com/article/3687)
 - [Random Number Generation in Embedded Systems](http://www.zilogic.com/blog/tutorial-random-numbers.html)
+- [Linux on an 8-Bit Micro?](http://dmitry.gr/index.php?r=05.Projects&proj=07.%20Linux%20on%208bit)
+
+### Makefiles
+- [Automatic Variables to use in Recipes](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html)
+- [Target-specific Variable Values](https://www.gnu.org/software/make/manual/html_node/Target_002dspecific.html)
+- [Implicit Rules](https://www.gnu.org/software/make/manual/html_node/Implicit-Rules.html)
+- [Auto-Dependency Generation](http://make.mad-scientist.net/papers/advanced-auto-dependency-generation/)
+- [Multi-Architecture Builds](http://make.mad-scientist.net/papers/multi-architecture-builds/)
+- [Makefile Guidelines](http://make.mad-scientist.net/papers/rules-of-makefiles/)
+
+### ADCs
+- [Analog-to-Digital Confusion: Pitfalls of Driving an ADC - Jason Sachs](https://www.embeddedrelated.com/showarticle/110.php)
+- [The ABCs of ADCs: Understanding How ADC Errors Affect System Performance - Tutorial - Maxim](http://www.maximintegrated.com/en/app-notes/index.mvp/id/748)
+- [Understanding analog to digital converter specifications | Embedded](http://www.embedded.com/design/configurable-systems/4025078/Understanding-analog-to-digital-converter-specifications)
+- [Freescale AN2438](http://www.nxp.com/assets/documents/data/en/application-notes/AN2438.pdf)
+
+### Beaglebones
+- [Awsome U-Boot Info](http://wiki.beyondlogic.org/index.php?title=BeagleBoneBlack_Upgrading_uBoot)
+- [Pin Multiplexing](http://www.valvers.com/embedded-linux/beaglebone-black/step04-gpio/)
+
+### Other
+- [Linux Source Code](http://lxr.free-electrons.com/)
+- [Linker Scripts](https://sourceware.org/binutils/docs/ld/Scripts.html)
 
