@@ -9,7 +9,6 @@
 The personal website of Joshua DeWeese
 
 [Intranet](http://intranet.mechbits.com/)
-[Owncloud](https://mechbits.com/owncloud)
 [Resume](./resume.html)
 
 ## About Me
