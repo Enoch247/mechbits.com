@@ -25,6 +25,7 @@ I am a computer engineer by profession. My favorite projects are the ones that r
 
 - Figure out what you want, before somebody does it for you.
 
+- "Working hard for something we don't care about is called stress. Working hard for something we love is called passion." - Simon Sinek
 
 ## Social
 - [Google+](https://plus.google.com/+JoshuaDeWeese)
